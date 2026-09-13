@@ -1,0 +1,16 @@
+# datos (1.6 GB) y derivados
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/README.md
+models/*.joblib
+
+# python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# outputs pesados de notebooks: los notebooks se versionan sin salidas (ver Makefile)

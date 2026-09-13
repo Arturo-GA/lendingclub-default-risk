@@ -1,0 +1,12 @@
+[project]
+name = "lcrisk"
+version = "2.0.0"
+description = "Predicción de default en préstamos P2P (LendingClub) con prácticas de riesgo de crédito"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore::FutureWarning", "ignore::UserWarning"]
+
+[tool.ruff]
+line-length = 120

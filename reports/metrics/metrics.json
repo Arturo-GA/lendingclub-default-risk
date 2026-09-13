@@ -1,0 +1,297 @@
+{
+  "metrics": {
+    "logreg": {
+      "train": {
+        "auc": 0.6951280557424908,
+        "gini": 0.3902561114849816,
+        "ks": 0.2845584217703551,
+        "pr_auc": 0.27562627672192674,
+        "brier": 0.22176449316255706,
+        "log_loss": 0.6340829580626591,
+        "base_rate": 0.14820438794129995,
+        "n": 466916
+      },
+      "valid": {
+        "auc": 0.7016944455905364,
+        "gini": 0.4033888911810728,
+        "ks": 0.29570459739873506,
+        "pr_auc": 0.2793091982448763,
+        "brier": 0.2061343551281538,
+        "log_loss": 0.598563190154951,
+        "base_rate": 0.1477816757118727,
+        "n": 100053
+      },
+      "test": {
+        "auc": 0.7040615349996049,
+        "gini": 0.4081230699992098,
+        "ks": 0.2979565075114762,
+        "pr_auc": 0.2832144898816062,
+        "brier": 0.2004174021796775,
+        "log_loss": 0.586264487888514,
+        "base_rate": 0.14905801809005048,
+        "n": 100055
+      }
+    },
+    "scorecard": {
+      "train": {
+        "auc": 0.6938260093980244,
+        "gini": 0.3876520187960488,
+        "ks": 0.2812208672806282,
+        "pr_auc": 0.27499079582461,
+        "brier": 0.22274886921206702,
+        "log_loss": 0.6342134284297531,
+        "base_rate": 0.14820438794129995,
+        "n": 466916
+      },
+      "valid": {
+        "auc": 0.7016653670488869,
+        "gini": 0.40333073409777387,
+        "ks": 0.2942108252345762,
+        "pr_auc": 0.27683053326446544,
+        "brier": 0.20648290971632188,
+        "log_loss": 0.5978399579288615,
+        "base_rate": 0.1477816757118727,
+        "n": 100053
+      },
+      "test": {
+        "auc": 0.7039551963968574,
+        "gini": 0.4079103927937149,
+        "ks": 0.2958906768916077,
+        "pr_auc": 0.28352784995754177,
+        "brier": 0.20121751174262192,
+        "log_loss": 0.5863949963844529,
+        "base_rate": 0.14905801809005048,
+        "n": 100055
+      }
+    },
+    "random_forest": {
+      "train": {
+        "auc": 0.7271365803189956,
+        "gini": 0.4542731606379913,
+        "ks": 0.32479428215904693,
+        "pr_auc": 0.313861534558273,
+        "brier": 0.2114353555767202,
+        "log_loss": 0.609254851980822,
+        "base_rate": 0.14820438794129995,
+        "n": 466916
+      },
+      "valid": {
+        "auc": 0.7030002918990323,
+        "gini": 0.4060005837980647,
+        "ks": 0.29998253145931997,
+        "pr_auc": 0.27775582902044915,
+        "brier": 0.19849974981007906,
+        "log_loss": 0.5810328902010339,
+        "base_rate": 0.1477816757118727,
+        "n": 100053
+      },
+      "test": {
+        "auc": 0.704275599832985,
+        "gini": 0.4085511996659701,
+        "ks": 0.29361724863483524,
+        "pr_auc": 0.2861446893056865,
+        "brier": 0.19239522666516826,
+        "log_loss": 0.5680889259756456,
+        "base_rate": 0.14905801809005048,
+        "n": 100055
+      }
+    },
+    "xgboost": {
+      "train": {
+        "auc": 0.7372722464189082,
+        "gini": 0.4745444928378164,
+        "ks": 0.3458211385611181,
+        "pr_auc": 0.32710332740282294,
+        "brier": 0.21038474142551422,
+        "log_loss": 0.6054054498672485,
+        "base_rate": 0.14820438794129995,
+        "n": 466916
+      },
+      "valid": {
+        "auc": 0.7119061804430771,
+        "gini": 0.42381236088615415,
+        "ks": 0.3111410286014143,
+        "pr_auc": 0.2927803655022001,
+        "brier": 0.20365460216999054,
+        "log_loss": 0.5890799164772034,
+        "base_rate": 0.1477816757118727,
+        "n": 100053
+      },
+      "test": {
+        "auc": 0.7139231531866354,
+        "gini": 0.4278463063732707,
+        "ks": 0.3108377862892306,
+        "pr_auc": 0.29657327810538847,
+        "brier": 0.19864429533481598,
+        "log_loss": 0.5780774354934692,
+        "base_rate": 0.14905801809005048,
+        "n": 100055
+      }
+    },
+    "lightgbm": {
+      "train": {
+        "auc": 0.7334159163925946,
+        "gini": 0.46683183278518925,
+        "ks": 0.3396237832396684,
+        "pr_auc": 0.3172982570509796,
+        "brier": 0.2119537263861145,
+        "log_loss": 0.6082342508660709,
+        "base_rate": 0.14820438794129995,
+        "n": 466916
+      },
+      "valid": {
+        "auc": 0.7120386333153004,
+        "gini": 0.42407726663060075,
+        "ks": 0.31029826724967113,
+        "pr_auc": 0.2931578676984022,
+        "brier": 0.204323779584502,
+        "log_loss": 0.5902754923125217,
+        "base_rate": 0.1477816757118727,
+        "n": 100053
+      },
+      "test": {
+        "auc": 0.7150978412247728,
+        "gini": 0.43019568244954565,
+        "ks": 0.31369619814073707,
+        "pr_auc": 0.29859069971361824,
+        "brier": 0.19906240603253514,
+        "log_loss": 0.5787420297410907,
+        "base_rate": 0.14905801809005048,
+        "n": 100055
+      }
+    }
+  },
+  "thresholds": {
+    "logreg": {
+      "threshold": 0.495,
+      "tp": 8688,
+      "fp": 25393,
+      "fn": 6226,
+      "tn": 59748,
+      "approval_rate": 0.6593773424616461,
+      "default_rate_approved": 0.09437050959468882,
+      "default_rate_baseline": 0.14905801809005048,
+      "recall_default": 0.582539895400295,
+      "precision_default": 0.2549220973562982
+    },
+    "scorecard": {
+      "threshold": 0.505,
+      "tp": 8658,
+      "fp": 25304,
+      "fn": 6256,
+      "tn": 59837,
+      "approval_rate": 0.6605666883214232,
+      "default_rate_approved": 0.09465450198962068,
+      "default_rate_baseline": 0.14905801809005048,
+      "recall_default": 0.5805283626123106,
+      "precision_default": 0.2549319828043107
+    },
+    "random_forest": {
+      "threshold": 0.49,
+      "tp": 8526,
+      "fp": 24614,
+      "fn": 6388,
+      "tn": 60527,
+      "approval_rate": 0.6687821698066063,
+      "default_rate_approved": 0.09546439512814765,
+      "default_rate_baseline": 0.14905801809005048,
+      "recall_default": 0.571677618345179,
+      "precision_default": 0.2572721786360893
+    },
+    "xgboost": {
+      "threshold": 0.525,
+      "tp": 8317,
+      "fp": 22617,
+      "fn": 6597,
+      "tn": 62524,
+      "approval_rate": 0.6908300434760881,
+      "default_rate_approved": 0.09544132752709017,
+      "default_rate_baseline": 0.14905801809005048,
+      "recall_default": 0.5576639399222207,
+      "precision_default": 0.2688627400271546
+    },
+    "lightgbm": {
+      "threshold": 0.51,
+      "tp": 8945,
+      "fp": 25307,
+      "fn": 5969,
+      "tn": 59834,
+      "approval_rate": 0.6576682824446555,
+      "default_rate_approved": 0.0907101499931614,
+      "default_rate_baseline": 0.14905801809005048,
+      "recall_default": 0.5997720262840285,
+      "precision_default": 0.2611526334228658
+    }
+  },
+  "exclude_pricing": false,
+  "features": {
+    "numeric": [
+      "loan_amnt",
+      "int_rate",
+      "installment",
+      "term_months",
+      "loan_to_income",
+      "installment_to_income",
+      "log_annual_inc",
+      "dti",
+      "fico",
+      "credit_history_months",
+      "revol_bal",
+      "revol_util",
+      "revol_bal_to_income",
+      "emp_length_years",
+      "grade_ord",
+      "sub_grade_ord",
+      "delinq_2yrs",
+      "inq_last_6mths",
+      "mths_since_last_delinq",
+      "open_acc",
+      "pub_rec",
+      "pub_rec_bankruptcies",
+      "total_acc",
+      "collections_12_mths_ex_med",
+      "acc_open_past_24mths",
+      "avg_cur_bal",
+      "bc_open_to_buy",
+      "bc_util",
+      "chargeoff_within_12_mths",
+      "delinq_amnt",
+      "mo_sin_old_il_acct",
+      "mo_sin_old_rev_tl_op",
+      "mo_sin_rcnt_rev_tl_op",
+      "mo_sin_rcnt_tl",
+      "mort_acc",
+      "mths_since_recent_bc",
+      "mths_since_recent_inq",
+      "num_accts_ever_120_pd",
+      "num_actv_bc_tl",
+      "num_actv_rev_tl",
+      "num_bc_sats",
+      "num_bc_tl",
+      "num_il_tl",
+      "num_op_rev_tl",
+      "num_rev_accts",
+      "num_rev_tl_bal_gt_0",
+      "num_sats",
+      "num_tl_90g_dpd_24m",
+      "num_tl_op_past_12m",
+      "pct_tl_nvr_dlq",
+      "percent_bc_gt_75",
+      "tax_liens",
+      "tot_cur_bal",
+      "tot_hi_cred_lim",
+      "total_bal_ex_mort",
+      "total_bc_limit",
+      "total_il_high_credit_limit",
+      "total_rev_hi_lim"
+    ],
+    "categorical": [
+      "home_ownership",
+      "verification_status",
+      "purpose",
+      "addr_state",
+      "application_type",
+      "initial_list_status"
+    ]
+  }
+}
