@@ -49,35 +49,35 @@ def write_summary(metrics: dict, thresholds: dict, out: Path, exclude_pricing: b
     for name, m in metrics.items():
         t = thresholds[name]
         rows.append({
-            "Modelo": name,
+            "Model": name,
             "AUC": f"{m['test']['auc']:.4f}",
             "Gini": f"{m['test']['gini']:.4f}",
             "KS": f"{m['test']['ks']:.4f}",
             "PR-AUC": f"{m['test']['pr_auc']:.4f}",
             "Brier": f"{m['test']['brier']:.4f}",
             "AUC train": f"{m['train']['auc']:.4f}",
-            "Umbral": f"{t['threshold']:.2f}",
-            "Aprobación": f"{100*t['approval_rate']:.1f}%",
-            "Default aprobados": f"{100*t['default_rate_approved']:.2f}%",
+            "Threshold": f"{t['threshold']:.2f}",
+            "Approval": f"{100*t['approval_rate']:.1f}%",
+            "Default (approved)": f"{100*t['default_rate_approved']:.2f}%",
         })
     tab = pd.DataFrame(rows).sort_values("AUC", ascending=False)
     base = next(iter(metrics.values()))["test"]["base_rate"]
     lines = [
-        "# Resultados (test out-of-time)",
+        "# Results (out-of-time test)",
         "",
-        f"Variables de precio de LendingClub (int_rate, grade): **{'excluidas' if exclude_pricing else 'incluidas'}**.  ",
-        f"Tasa de default en test: **{100*base:.2f}%**. Umbral elegido en validación con costo FN:FP = {C.COST_FALSE_NEGATIVE:.0f}:{C.COST_FALSE_POSITIVE:.0f}.",
+        f"LendingClub pricing variables (int_rate, grade): **{'excluded' if exclude_pricing else 'included'}**.  ",
+        f"Default rate in test: **{100*base:.2f}%**. Threshold chosen on validation with cost FN:FP = {C.COST_FALSE_NEGATIVE:.0f}:{C.COST_FALSE_POSITIVE:.0f}.",
         "",
         tab.to_markdown(index=False),
         "",
-        "AUC train vs test muestra el grado de sobreajuste. `Aprobación` y `Default aprobados` "
-        "describen la cartera que resultaría de rechazar todo lo que supera el umbral.",
+        "AUC train vs test shows the degree of overfitting. `Approval` and `Default (approved)` "
+        "describe the portfolio that results from rejecting everything above the threshold.",
     ]
     if stability is not None:
         top = stability.head(10).copy()
         top["psi"] = top["psi"].round(3)
-        lines += ["", "## Estabilidad de variables (PSI train → test)", "",
-                  f"{int((stability['psi'] > C.PSI_WARN).sum())} de {len(stability)} variables por encima de {C.PSI_WARN}. Las 10 con mayor deriva:", "",
+        lines += ["", "## Feature stability (PSI train → test)", "",
+                  f"{int((stability['psi'] > C.PSI_WARN).sum())} of {len(stability)} features above {C.PSI_WARN}. The 10 with the largest drift:", "",
                   top.to_markdown(index=False)]
     out.write_text("\n".join(lines), encoding="utf-8")
     log.info("Resumen escrito en %s", out)
