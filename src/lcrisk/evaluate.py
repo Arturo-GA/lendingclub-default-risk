@@ -193,5 +193,5 @@ def psi(expected: pd.Series, actual: pd.Series, bins: int = 10, eps: float = 1e-
 def psi_table(X_ref: pd.DataFrame, X_new: pd.DataFrame) -> pd.DataFrame:
     rows = [{"feature": c, "psi": psi(X_ref[c], X_new[c])} for c in X_ref.columns]
     out = pd.DataFrame(rows).sort_values("psi", ascending=False).reset_index(drop=True)
-    out["status"] = pd.cut(out["psi"], [-np.inf, C.PSI_WARN, C.PSI_ALERT, np.inf], labels=["estable", "vigilar", "inestable"])
+    out["status"] = pd.cut(out["psi"], [-np.inf, C.PSI_WARN, C.PSI_ALERT, np.inf], labels=["stable", "watch", "unstable"])
     return out

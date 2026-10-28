@@ -1,9 +1,9 @@
-# Resultados (test out-of-time)
+# Results (out-of-time test)
 
-Variables de precio de LendingClub (int_rate, grade): **incluidas**.  
-Tasa de default en test: **14.91%**. Umbral elegido en validación con costo FN:FP = 5:1.
+LendingClub pricing variables (int_rate, grade): **included**.  
+Default rate in test: **14.91%**. Threshold chosen on validation with cost FN:FP = 5:1.
 
-| Modelo        |    AUC |   Gini |     KS |   PR-AUC |   Brier |   AUC train |   Umbral | Aprobación   | Default aprobados   |
+| Model         |    AUC |   Gini |     KS |   PR-AUC |   Brier |   AUC train | Threshold | Approval     | Default (approved)  |
 |:--------------|-------:|-------:|-------:|---------:|--------:|------------:|---------:|:-------------|:--------------------|
 | lightgbm      | 0.7151 | 0.4302 | 0.3137 |   0.2986 |  0.1991 |      0.7334 |     0.51 | 65.8%        | 9.07%               |
 | xgboost       | 0.7139 | 0.4278 | 0.3108 |   0.2966 |  0.1986 |      0.7373 |     0.53 | 69.1%        | 9.54%               |
@@ -11,21 +11,21 @@ Tasa de default en test: **14.91%**. Umbral elegido en validación con costo FN:
 | logreg        | 0.7041 | 0.4081 | 0.298  |   0.2832 |  0.2004 |      0.6951 |     0.49 | 65.9%        | 9.44%               |
 | scorecard     | 0.704  | 0.4079 | 0.2959 |   0.2835 |  0.2012 |      0.6938 |     0.51 | 66.1%        | 9.47%               |
 
-AUC train vs test muestra el grado de sobreajuste. `Aprobación` y `Default aprobados` describen la cartera que resultaría de rechazar todo lo que supera el umbral.
+AUC train vs test shows the degree of overfitting. `Approval` and `Default (approved)` describe the portfolio that results from rejecting everything above the threshold.
 
-## Estabilidad de variables (PSI train → test)
+## Feature stability (PSI train → test)
 
-33 de 64 variables por encima de 0.1. Las 10 con mayor deriva:
+33 of 64 features above 0.1. The 10 with the largest drift:
 
 | feature                    |   psi | status    |
 |:---------------------------|------:|:----------|
-| num_bc_tl                  | 0.988 | inestable |
-| num_tl_op_past_12m         | 0.974 | inestable |
-| pct_tl_nvr_dlq             | 0.97  | inestable |
-| total_il_high_credit_limit | 0.968 | inestable |
-| mo_sin_old_rev_tl_op       | 0.968 | inestable |
-| num_actv_rev_tl            | 0.968 | inestable |
-| total_rev_hi_lim           | 0.967 | inestable |
-| num_rev_tl_bal_gt_0        | 0.966 | inestable |
-| num_op_rev_tl              | 0.966 | inestable |
-| num_actv_bc_tl             | 0.964 | inestable |
+| num_bc_tl                  | 0.988 | unstable |
+| num_tl_op_past_12m         | 0.974 | unstable |
+| pct_tl_nvr_dlq             | 0.97  | unstable |
+| total_il_high_credit_limit | 0.968 | unstable |
+| mo_sin_old_rev_tl_op       | 0.968 | unstable |
+| num_actv_rev_tl            | 0.968 | unstable |
+| total_rev_hi_lim           | 0.967 | unstable |
+| num_rev_tl_bal_gt_0        | 0.966 | unstable |
+| num_op_rev_tl              | 0.966 | unstable |
+| num_actv_bc_tl             | 0.964 | unstable |
